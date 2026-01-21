@@ -3,6 +3,7 @@ package com.e_com.QuickMart.userController;
 import com.e_com.QuickMart.entity.sql.CategoryEntity;
 import com.e_com.QuickMart.service.category.CategoryService;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

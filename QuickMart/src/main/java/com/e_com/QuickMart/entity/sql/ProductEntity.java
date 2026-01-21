@@ -1,9 +1,14 @@
 package com.e_com.QuickMart.entity.sql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.Getter;
+import lombok.Setter;
+
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
-
+@Getter
+@Setter
 @Entity
 @Table(
         name = "products",
@@ -18,8 +23,10 @@ public class ProductEntity {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /* 🔗 Many products belong to one category */
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "category_id", nullable = false)
+    @JsonIgnore
     private CategoryEntity category;
 
     @Column(name = "name", nullable = false, length = 150)
@@ -60,6 +67,4 @@ public class ProductEntity {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-
-    // getters and setters
 }

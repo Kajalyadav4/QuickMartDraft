@@ -55,6 +55,4 @@ public class CategoryEntity {
     protected void onUpdate() {
         this.updatedAt = LocalDateTime.now();
     }
-
-    // getters and setters
 }
