@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/QuickMart.iml" filepath="$PROJECT_DIR$/.idea/QuickMart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/QuickMart/QuickMart.iml" filepath="$PROJECT_DIR$/QuickMart/QuickMart.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/QuickMartDraft.iml" filepath="$PROJECT_DIR$/.idea/QuickMartDraft.iml" />
     </modules>
   </component>
 </project>

@@ -2,7 +2,9 @@ package com.e_com.QuickMart.userController;
 
 import com.e_com.QuickMart.entity.sql.CategoryEntity;
 import com.e_com.QuickMart.service.category.CategoryService;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
@@ -18,10 +20,15 @@ public class CategoryController {
 
     /**
      * USER API
-     * Get all active categories
+     * Fetch all active categories
      */
     @GetMapping
-    public List<CategoryEntity> getAllCategories() {
+    public List<CategoryEntity> getAllActiveCategories() {
         return categoryService.getAllActiveCategories();
     }
+    @GetMapping("/test")
+    public CategoryEntity test() {
+        return categoryService.getAllActiveCategories().getFirst();
+    }
+
 }

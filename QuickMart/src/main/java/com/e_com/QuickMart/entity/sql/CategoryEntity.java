@@ -1,9 +1,19 @@
 package com.e_com.QuickMart.entity.sql;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
 import java.time.LocalDateTime;
 import java.util.List;
 
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Entity
 @Table(name = "categories")
 public class CategoryEntity {
@@ -31,6 +41,7 @@ public class CategoryEntity {
     private LocalDateTime updatedAt;
 
     @OneToMany(mappedBy = "category", fetch = FetchType.LAZY)
+    @JsonIgnore
     private List<ProductEntity> products;
 
     @PrePersist
