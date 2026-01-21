@@ -2,13 +2,24 @@ package com.e_com.QuickMart.entity.sql;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+<<<<<<< Updated upstream
 import lombok.Getter;
+=======
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+>>>>>>> Stashed changes
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Getter
 @Setter
+<<<<<<< Updated upstream
+=======
+@NoArgsConstructor
+@AllArgsConstructor
+>>>>>>> Stashed changes
 @Entity
 @Table(
         name = "products",
@@ -55,6 +66,7 @@ public class ProductEntity {
 
     @Column(name = "updated_at", nullable = false)
     private LocalDateTime updatedAt;
+
 
     @PrePersist
     protected void onCreate() {

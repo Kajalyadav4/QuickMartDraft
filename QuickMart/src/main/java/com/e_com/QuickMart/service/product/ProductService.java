@@ -1,6 +1,7 @@
 package com.e_com.QuickMart.service.product;
 
 import com.e_com.QuickMart.entity.sql.ProductEntity;
+<<<<<<< Updated upstream
 import com.e_com.QuickMart.repository.sql.ProductRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -23,4 +24,10 @@ public class ProductService {
                 PageRequest.of(page, size)
         );
     }
+=======
+
+public interface ProductService {
+
+    ProductEntity getProductDetails(Long productId);
+>>>>>>> Stashed changes
 }
