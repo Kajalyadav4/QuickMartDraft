@@ -9,19 +9,15 @@ import java.util.Optional;
 
 public interface ProductRepository extends JpaRepository<ProductEntity, Long> {
 
-<<<<<<< Updated upstream
+    // User: fetch active products by category (paginated)
     Page<ProductEntity> findByCategoryIdAndIsActiveTrue(
             Long categoryId,
             Pageable pageable
     );
-=======
-    // User: fetch active products by category (paginated)
-    Page<ProductEntity> findByCategoryIdAndIsActiveTrue(Long categoryId, Pageable pageable);
 
     // User/Admin: count active products in category
     long countByCategoryIdAndIsActiveTrue(Long categoryId);
 
-    // Admin: fetch product by id (active)
+    // Admin/User: fetch active product by id
     Optional<ProductEntity> findByIdAndIsActiveTrue(Long id);
->>>>>>> Stashed changes
 }

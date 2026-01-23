@@ -3,23 +3,31 @@ package com.e_com.QuickMart.service.product;
 import com.e_com.QuickMart.entity.sql.ProductEntity;
 import com.e_com.QuickMart.repository.sql.ProductRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
-@Transactional(readOnly = true)
 public class ProductServiceImpl implements ProductService {
 
     private final ProductRepository productRepository;
 
     @Override
-    public ProductEntity getProductDetails(Long productId) {
+    public Page<ProductEntity> getProductsByCategory(
+            Long categoryId,
+            int page,
+            int size
+    ) {
+        return productRepository.findByCategoryIdAndIsActiveTrue(
+                categoryId,
+                PageRequest.of(page, size)
+        );
+    }
 
-        return productRepository
-                .findByIdAndIsActiveTrue(productId)
-                .orElseThrow(() ->
-                        new RuntimeException("Product not found with id: " + productId)
-                );
+    @Override
+    public ProductEntity getProductDetails(Long productId) {
+        return productRepository.findById(productId)
+                .orElseThrow(() -> new RuntimeException("Product not found"));
     }
 }

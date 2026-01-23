@@ -2,24 +2,24 @@ package com.e_com.QuickMart.entity.sql;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-<<<<<<< Updated upstream
+//<<<<<<< Updated upstream
 import lombok.Getter;
-=======
+//=======
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 @Getter
 @Setter
-<<<<<<< Updated upstream
-=======
+//<<<<<<< Updated upstream
+//=======
 @NoArgsConstructor
 @AllArgsConstructor
->>>>>>> Stashed changes
+//>>>>>>> Stashed changes
 @Entity
 @Table(
         name = "products",
