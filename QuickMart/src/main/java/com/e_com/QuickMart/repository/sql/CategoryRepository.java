@@ -1,7 +1,9 @@
 package com.e_com.QuickMart.repository.sql;
 
 import com.e_com.QuickMart.entity.sql.CategoryEntity;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
@@ -19,6 +21,8 @@ public interface CategoryRepository extends JpaRepository<CategoryEntity, Long> 
     boolean existsByName(String name);
 
     // Admin: soft delete
+    @Modifying
+    @Transactional
     @Query("UPDATE CategoryEntity c SET c.isActive = false WHERE c.id = :id")
     void softDeleteById(Long id);
 }
